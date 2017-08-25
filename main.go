@@ -39,7 +39,7 @@ func checkError(err error) {
 func askContainerName() string {
 	name := ""
 	err := survey.AskOne(
-		&survey.Input{Message: "Search for container:"},
+		&survey.Input{Message: "Search for container"},
 		&name,
 		survey.Required,
 	)
@@ -76,7 +76,7 @@ func askContainer(options []string) string {
 func askShell() string {
 	shell := ""
 	err := survey.AskOne(
-		&survey.Input{Message: "Shell:", Default: "bash"},
+		&survey.Input{Message: "Command", Default: "bash"},
 		&shell,
 		survey.Required,
 	)
