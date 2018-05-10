@@ -13,7 +13,12 @@ import (
 )
 
 func main() {
-	containerName := askContainerName()
+	containerName := ""
+	if len(os.Args) == 1 {
+		containerName = askContainerName()
+	} else {
+		containerName = os.Args[1]
+	}
 	containers := getContainers(containerName)
 	options := []string{}
 	containerNameByID := make(map[string]string)
